@@ -1,12 +1,13 @@
 import PropTypes from 'prop-types';
+import Card from './shared/Card';
 
 const FeedbackItem = ({ item }) => {
 	const { rating, text } = item;
 	return (
-		<div className='card'>
+		<Card reverse={true}>
 			<div className='num-display'>{rating}</div>
 			<div className='text-display'>{text}</div>
-		</div>
+		</Card>
 	);
 };
 
