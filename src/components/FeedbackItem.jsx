@@ -12,7 +12,7 @@ const FeedbackItem = ({ item, handleDelete }) => {
 				onClick={() => handleDelete(id)}
 				className='close'
 			>
-				<FaTimes color='purple' />
+				<FaTimes color='white' />
 			</button>
 			<div className='text-display'>{text}</div>
 		</Card>
