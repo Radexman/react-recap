@@ -3,10 +3,20 @@ import PropTypes from 'prop-types';
 const Card = ({ children, reverse }) => {
 	// return <div className={`card ${reverse && 'card-reverse'}`}>{children}</div>;
 
+	const lightTheme = {
+		backgroundColor: '#ffffff',
+		color: '#000000',
+	};
+
+	const darkTheme = {
+		backgroundColor: 'rgba(0,0,0,0.4)',
+		color: '#ffffff',
+	};
+
 	return (
 		<div
 			className='card'
-			style={reverse ? { backgroundColor: 'rgba(0,0,0,0.4)', color: '#ffffff' } : { backgroundColor: '#ffffff', color: '#000000' }}
+			style={reverse ? darkTheme : lightTheme}
 		>
 			{children}
 		</div>
@@ -18,7 +28,7 @@ Card.defaultProps = {
 };
 
 Card.propTypes = {
-	children: PropTypes.array.isRequired,
+	children: PropTypes.node.isRequired,
 	reverse: PropTypes.bool,
 };
 
