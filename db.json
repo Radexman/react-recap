@@ -19,6 +19,11 @@
       "text": "Life sucks",
       "rating": "1",
       "id": 5
+    },
+    {
+      "text": "Yeah indeed life sucks",
+      "rating": "2",
+      "id": 6
     }
   ]
 }
