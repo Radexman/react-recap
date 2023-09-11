@@ -1,14 +1,16 @@
-import PropTypes from 'prop-types';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import FeedbackContext from '../context/FeedbackContext';
 import RatingSelect from './RatingSelect';
 import Card from './shared/Card';
 import Button from './shared/Button';
 
-const FeedbackForm = ({ handleAdd }) => {
+const FeedbackForm = () => {
 	const [text, setText] = useState('');
 	const [rating, setRating] = useState(10);
 	const [btnDisabled, setBtnDisabled] = useState(true);
 	const [message, setMessage] = useState('');
+
+	const { addFeedback } = useContext(FeedbackContext);
 
 	const handleTextChange = (e) => {
 		if (text === '') {
@@ -34,7 +36,7 @@ const FeedbackForm = ({ handleAdd }) => {
 				rating,
 			};
 
-			handleAdd(newFeedback);
+			addFeedback(newFeedback);
 
 			setText('');
 		}
@@ -63,10 +65,6 @@ const FeedbackForm = ({ handleAdd }) => {
 			</form>
 		</Card>
 	);
-};
-
-FeedbackForm.propTypes = {
-	handleAdd: PropTypes.func.isRequired,
 };
 
 export default FeedbackForm;
